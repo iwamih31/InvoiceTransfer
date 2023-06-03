@@ -22,5 +22,4 @@ public class AppService {
 				 httpServletResponse);
 		return message;
 	}
-
 }
