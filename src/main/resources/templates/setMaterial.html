@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<!-- library フラグメントの定義（JavaScript／CSS） -->
+	<th:block th:fragment="library">
+		<link rel="stylesheet" th:href="@{/css/main.css}">
+	</th:block>
+
+	<!--	main フラグメントの定義（メインコンテンツ）	-->
+	<th:block th:fragment="main">
+		<div class="get_material">
+			<!-- 操作関系開始 -->
+			<div class="control vertical">
+				<form id="get_file" method="post" th:action="@{${req} + '/Output/Excel'}" enctype="multipart/form-data">
+					<div class="guide">
+						出力側のテンプレートファイルを選んで下さい
+					</div>
+					<div>
+						<input type="file" name="output_model"/>
+					</div>
+					<div class="guide">
+						入力側のテンプレートファイルを選んで下さい
+					</div>
+					<div>
+						<input type="file" name="input_model"/>
+					</div>
+					<div class="guide">
+						入力側のデータ入りファイルを選んで下さい
+					</div>
+					<div>
+						<input type="file" name="input_data"/>
+					</div>
+					<br>
+					<div>
+						<button form="get_file" type="submit" class="btn btn-primary">
+							ファイルを作成
+						</button>
+					</div>
+				</form>
+			</div>
+			<!-- 操作関系終了 -->
+			<!-- 一覧表示開始 -->
+			<!-- 一覧表示終了 -->
+		</div>
+	</th:block>
+</html>

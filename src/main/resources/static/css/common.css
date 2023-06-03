@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+body {
+	position: relative;
+}
+
+#main {
+	margin: auto;
+	width: 80%;
+	text-align: center;
+}
+
+#header {
+	display:flex;
+	justify-content:space-between;
+	background-color: silver;
+	text-align: center;
+}
+
+#footer {
+	background-color: silver;
+	text-align: center;
+}
+
+#header nav {
+	padding: 0.3em;
+}
+
+.to_index {
+	margin: auto;
+	width: 80%;
+}
+
+.title {
+	width: 80%;
+	margin: auto;
+	border-bottom: solid thin;
+}
+
+.control {
+	margin: 1em;
+	font-size: large;
+}
+
+nav button,
+.btn,
+.margin_02  {
+	margin: 0.2em;
+}
+
+.vertical,
+.vertical div
+{
+	display:table;
+	margin: auto;
+	margin-top: 0.3em;
+	width: auto;
+	text-align: left;
+}
+
+.guide {
+	font-size: x-large;
+}
+

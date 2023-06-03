@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<!-- library フラグメントの定義（JavaScript／CSS） -->
+	<th:block th:fragment="library">
+		<link rel="stylesheet" th:href="@{/css/main.css}">
+	</th:block>
+
+	<!--	main フラグメントの定義（メインコンテンツ）	-->
+	<th:block th:fragment="main">
+		<div id="index">
+			<!-- 操作関系開始 -->
+			<div class="control">
+				<div th:if="${message}" class="alert arert-success">
+					[[${message}]]
+				</div>
+				<form id="output_model" method="post" th:action="@{${req} + '/SetMaterial'}">
+					<button form="output_model" type="submit" class="btn btn-primary">
+						請求書移行を開始する
+					</button>
+				</form>
+			</div>
+			<!-- 操作関系終了 -->
+			<!-- 一覧表示開始 -->
+			<!-- 一覧表示終了 -->
+		</div>
+	</th:block>
+</html>
