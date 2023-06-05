@@ -10,14 +10,9 @@ body {
 	text-align: center;
 }
 
-#header {
-	display:flex;
-	justify-content:space-between;
-	background-color: silver;
-	text-align: center;
-}
-
-#footer {
+#header,
+#footer
+ {
 	background-color: silver;
 	text-align: center;
 }
@@ -27,13 +22,11 @@ body {
 }
 
 .to_index {
-	margin: auto;
-	width: 80%;
+	text-align: left;
 }
 
 .title {
-	width: 80%;
-	margin: auto;
+	text-align: left;
 	border-bottom: solid thin;
 }
 
@@ -60,5 +53,10 @@ nav button,
 
 .guide {
 	font-size: x-large;
+}
+
+.flex_space_between {
+	display:flex;
+	justify-content:space-between;
 }
 

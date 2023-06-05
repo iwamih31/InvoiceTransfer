@@ -9,20 +9,30 @@
 	<!--	main フラグメントの定義（メインコンテンツ）	-->
 	<th:block th:fragment="main">
 		<div id="index">
+			<!-- ページタイトル表示 -->
+			<div class="title">
+				<h1 class="h2">[[${title}]]</h1>
+			</div>
 			<!-- 操作関系開始 -->
-			<div class="control">
+			<div class="control vertical">
 				<div th:if="${message}" class="alert arert-success">
 					[[${message}]]
 				</div>
-				<form id="output_model" method="post" th:action="@{${req} + '/SetMaterial'}">
-					<button form="output_model" type="submit" class="btn btn-primary">
-						請求書移行を開始する
-					</button>
-				</form>
+				<nav>
+					<form id="output_model" method="post" th:action="@{${req} + '/SetMaterial'}">
+						<button form="output_model" type="submit" class="btn btn-primary">
+							請求書移行を開始する
+						</button>
+					</form>
+				</nav>
 			</div>
 			<!-- 操作関系終了 -->
 			<!-- 一覧表示開始 -->
 			<!-- 一覧表示終了 -->
+			<!-- トップへ戻るリンク -->
+			<div class="to_index">
+				<a th:href="@{${req} + '/'}">メインページへ</a>
+			</div>
 		</div>
 	</th:block>
 </html>

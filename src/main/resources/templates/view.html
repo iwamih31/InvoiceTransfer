@@ -17,41 +17,26 @@
 
 	<!-- ヘッダー -->
 	<div id="header">
-		<a th:href="@{${req} + '/'}">
-			<img src="/image/logo.png" title="ロゴ" class="padding_s">
-		</a>
-		<nav class="padding_s">
+		<div class="flex_space_between">
 			<a th:href="@{${req} + '/'}">
-				<button type="button" class="btn btn-primary">トップページ</button>
+				<img src="/image/logo.png" title="ロゴ" class="padding_s">
 			</a>
-			<a th:href="@{${req} + '/ActualResults'}">
-				<button type="button" class="btn btn-primary">実施記録票出力</button>
-			</a>
-			<a th:href="@{${req} + '/Office'}">
-				<button type="button" class="btn btn-primary">事業所情報</button>
-			</a>
-			<a th:href="@{${req} + '/Setting'}">
-				<button type="button" class="btn btn-primary">設定</button>
-			</a>
-		</nav>
+			<nav class="header_nav flex_space_between">
+				<a th:href="@{${req} + '/'}">
+					<button type="button" class="btn btn-primary">トップページ</button>
+				</a>
+				<a th:href="@{${req} + '/Setting'}">
+					<button type="button" class="btn btn-primary">設定</button>
+				</a>
+				<form method="post" action="/shutdown">
+					<button type="submit" class="btn btn-primary">終了する</button>
+				</form>
+			</nav>
+		</div>
 	</div>
-
-
-	<!-- ページタイトル表示 -->
-	<div class="title">
-		<h1 class="h2">[[${title}]]</h1>
-	</div>
-
 
 	<!-- メインコンテンツの埋め込み場所 -->
-	<div id="main" th:include="__${main}__">
-	</div>
-
-
-	<!-- トップへ戻るリンク -->
-	<div class="to_index">
-		<a th:href="@{${req} + '/'}">メインページへ</a>
-	</div>
+	<div id="main" th:include="__${main}__"></div>
 
 	<!-- フッター -->
 	<div id="footer">

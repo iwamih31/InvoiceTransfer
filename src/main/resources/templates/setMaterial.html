@@ -9,38 +9,51 @@
 	<!--	main フラグメントの定義（メインコンテンツ）	-->
 	<th:block th:fragment="main">
 		<div class="get_material">
+			<!-- ページタイトル表示 -->
+			<div class="title">
+				<h1 class="h2">[[${title}]]</h1>
+			</div>
 			<!-- 操作関系開始 -->
 			<div class="control vertical">
 				<form id="get_file" method="post" th:action="@{${req} + '/Output/Excel'}" enctype="multipart/form-data">
 					<div class="guide">
-						出力側のテンプレートファイルを選んで下さい
+						① 出力側のテンプレートファイルを選んで下さい
 					</div>
 					<div>
 						<input type="file" name="output_model"/>
 					</div>
+					<br>
 					<div class="guide">
-						入力側のテンプレートファイルを選んで下さい
+						② 入力側のテンプレートファイルを選んで下さい
 					</div>
 					<div>
 						<input type="file" name="input_model"/>
 					</div>
+					<br>
 					<div class="guide">
-						入力側のデータ入りファイルを選んで下さい
+						③ 入力側のデータ入りファイルを選んで下さい
 					</div>
 					<div>
 						<input type="file" name="input_data"/>
 					</div>
 					<br>
-					<div>
+					<br>
+					<div class="guide">
+						④
 						<button form="get_file" type="submit" class="btn btn-primary">
 							ファイルを作成
 						</button>
 					</div>
+					<br>
 				</form>
 			</div>
 			<!-- 操作関系終了 -->
 			<!-- 一覧表示開始 -->
 			<!-- 一覧表示終了 -->
+			<!-- トップへ戻るリンク -->
+			<div class="to_index">
+				<a th:href="@{${req} + '/'}">メインページへ</a>
+			</div>
 		</div>
 	</th:block>
 </html>

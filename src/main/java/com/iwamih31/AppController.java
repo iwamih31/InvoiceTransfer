@@ -34,6 +34,13 @@ public class AppController {
 		return "view";
 	}
 
+	@GetMapping("/Setting")
+	public String setting(
+			Model model) {
+		add_View_Data_(model, "setting", "各種設定");
+		return "view";
+	}
+
 	@PostMapping("/SetMaterial")
 	public String setMaterial(
 			Model model) {
